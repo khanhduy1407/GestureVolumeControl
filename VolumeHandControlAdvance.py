@@ -39,6 +39,7 @@ colorVol = (255, 0, 0)
 
 while True:
     success, img = cap.read()
+    img = cv2.flip(img, 1)
 
     # Tìm tay
     detector.findHands(img)
@@ -89,5 +90,5 @@ while True:
     # pTime = cTime
     # cv2.putText(img, f'FPS: {int(fps)}', (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3)
 
-    cv2.imshow("Gesture Volume Control", cv2.flip(img, 1))
+    cv2.imshow("Gesture Volume Control", img)
     cv2.waitKey(1)
